@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <h1>Objetos</h1>
+
+    <ul id="lista"></ul>
+
+    <script>
+        var obj = { 
+            id: 5,  
+            nombre: "Chocolatina", 
+            precio: 0.85, 
+            imagenUrl: "https://tse2.mm.bing.net/th/id/OIP.nmvqv3rDVm7HW5taGjGTpgHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" 
+        };
+
+        var productos = [
+            { id: 1, nombre: "Coca-Cola", precio: 1.25, imagenUrl: "https://libros-conaliteg-sep.com.mx/wp-content/uploads/coca.webp" },
+            { id: 2, nombre: "Pupusa de Camarón", precio: 2.25, imagenUrl: "https://th.bing.com/th/id/OIP.rRBJmPTNcCL4rNDm24b5qgHaFU?o=7&cb=12rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" },
+            { id: 3, nombre: "Botella de Agua", precio: 1.00, imagenUrl: "https://tse2.mm.bing.net/th/id/OIP.hpF83NrwtWFkEvFaW2DLmAHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" },
+            { id: 4, nombre: "Yogurt Yes", precio: 0.69, imagenUrl: "https://walmartgt.vtexassets.com/arquivos/ids/450673/Yogurt-Yes-Vainilla-1000gr-2-16581.jpg?v=638416323068970000" }
+        ];
+
+        // Agregar el objeto al arreglo
+        productos.push(obj);
+
+        productos.forEach(x => {
+            var salida = `
+                <li>
+                    <b>Id:</b> ${x.id}<br>
+                    <b>Nombre:</b> ${x.nombre}<br>
+                    <b>Precio:</b> $${x.precio}<br>
+                    <img src="${x.imagenUrl}" alt="${x.nombre}" width="250" height="250"><br><br>
+                </li>
+            `;
+            document.getElementById('lista').innerHTML += salida;
+        });
+    </script>
+</body>
+</html>
